@@ -37,6 +37,9 @@ public class RestHivers implements Extension {
             this.server.createContext(endpoint, new GetHandler(lambda));
         } else if (method.equals(Method.DELETE)) {
             this.server.createContext(endpoint, new DeleteHandler(lambda));
+        } else if (method.equals(Method.POST))
+        {
+            this.server.createContext(endpoint, new PostHandler(lambda));
         }
         return this;
     }
