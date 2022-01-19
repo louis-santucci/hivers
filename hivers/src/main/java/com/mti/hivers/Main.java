@@ -11,7 +11,7 @@ public class Main {
                 .register(RestHivers.Method.DELETE, "/", context -> {
                     hivers.extension(RestHivers.class).shutdown();
                     context.response(204); })
-                .register(RestHivers.Method.POST, "/post", context -> context.response(205))
+                .register(RestHivers.Method.POST, "/post", context -> context.response(205, "Received Something"))
                 .start();
     }
 }

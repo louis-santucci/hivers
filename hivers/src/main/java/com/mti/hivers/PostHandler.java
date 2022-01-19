@@ -20,9 +20,6 @@ public class PostHandler implements HttpHandler {
             var httpObj = new HttpObject(httpExchange);
             lambda.accept(httpObj);
             var data = httpExchange.getRequestBody();
-            System.out.println(data);
-
-            //todo
             httpExchange.sendResponseHeaders(httpObj.statusCode, httpObj.message.length());
             var os = httpExchange.getResponseBody();
             os.write(httpObj.message.getBytes());
