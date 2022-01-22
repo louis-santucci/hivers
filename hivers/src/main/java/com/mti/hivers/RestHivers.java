@@ -41,6 +41,10 @@ public class RestHivers implements Extension {
         {
             this.server.createContext(endpoint, new PostHandler(lambda));
         }
+        else if (method.equals(Method.PUT))
+        {
+            this.server.createContext(endpoint, new PutHandler(lambda));
+        }
         return this;
     }
 
